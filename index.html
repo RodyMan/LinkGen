@@ -1,0 +1,34 @@
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="icon" href="Foundationlogo.png">
+
+
+
+<div class="LinkShort">
+  <center><img src="FoundationLogo.png" alt="Foundation"></center>
+  <center><h1> Link Shortener </h1></center><h1>
+<center><input type="text" id="box" placeholder="Shorten your link here.."></center>
+<center><div class="output" id="output">
+    <h6>Your link will appear here...</h6>
+</div></center>
+<center><button class="Gen" onclick="makelink(document.getElementById('box').value);">Generate</button></center>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var data;
+
+  function makelink(q) {
+    $.ajax({
+      url: "https://api.rebrandly.com/v1/links/new?apikey=2451adf7e25d4c528c44a1dc49a3b416&destination=" + q + "&domain[fullName]=go.linktunnel.org",
+      success: function(rawdata) {
+        var rawstring = JSON.stringify(rawdata);
+        data = JSON.parse(rawstring);
+        document.getElementById("output").innerHTML = "<a href='https://" + data.shortUrl + "' target='_blank'>" + data.shortUrl + "</a>";
+      }
+    });
+  }
+</script>
