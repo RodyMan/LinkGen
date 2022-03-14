@@ -10,7 +10,7 @@
   <center><h1> Link Shortener </h1></center><h1>
 <center><input type="text" id="box" placeholder="https://"></center>
 <center><div class="output" id="output">
-    <h6>Your link will appear here...</h6>
+    <h5>Your link will appear somewhere...</h5>
 </div></center>
 <center><button class="Gen" onclick="makelink(document.getElementById('box').value);">Generate</button></center>
 </div>
@@ -23,7 +23,7 @@
 
   function makelink(q) {
     $.ajax({
-      url: "https://api.rebrandly.com/v1/links/new?apikey=2451adf7e25d4c528c44a1dc49a3b416&destination=" + q + "&domain[fullName]=go.linktunnel.org",
+      url: "https://api.rebrandly.com/v1/links/new?apikey=2451adf7e25d4c528c44a1dc49a3b416&destination=" + q + "&domain[fullName]=short.linktunnel.org",
       success: function(rawdata) {
         var rawstring = JSON.stringify(rawdata);
         data = JSON.parse(rawstring);
