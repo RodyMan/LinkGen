@@ -35,10 +35,10 @@ h6{
 .Gen{
 	position: relative;
 	padding:1rem 2rem;
+	right: -0.1rem;
+	top: 1rem;
 	border-radius: 1rem;
 	background-color:white;
-	top: -30px;
-	left: -4px;
 	outline: none;
 	font-size: medium;
 	margin-bottom: 1rem;
