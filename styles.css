@@ -3,6 +3,9 @@ body{
 	padding:0rem;
 	background-color: black;
 }
+html{
+	font-size: 10px;
+}
 img{
 	position: relative;
  	bottom: 50px;
